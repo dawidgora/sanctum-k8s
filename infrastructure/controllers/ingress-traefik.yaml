@@ -45,12 +45,13 @@ spec:
       dashboard:
         enabled: true
         entryPoints: ["web"]
-    deployment:
-      podSecurityContext:
-        seccompProfile:
-          type: RuntimeDefault
-      containers:
-        - name: traefik
-          securityContext:
-            seccompProfile:
-              type: RuntimeDefault
+    podSecurityContext:
+      seccompProfile:
+        type: RuntimeDefault
+    securityContext:
+      runAsNonRoot: true
+      seccompProfile:
+        type: RuntimeDefault
+      capabilities:
+        drop:
+          - ALL
