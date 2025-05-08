@@ -27,7 +27,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: ingress-traefik
-        namespace: ingress-traefik
+        namespace: flux-system
       interval: 12h
   values:
     service:
