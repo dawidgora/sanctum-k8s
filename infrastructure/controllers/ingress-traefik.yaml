@@ -51,3 +51,4 @@ spec:
       dashboard:
         enabled: true
         entryPoints: ["web"]
+        insecure: true
