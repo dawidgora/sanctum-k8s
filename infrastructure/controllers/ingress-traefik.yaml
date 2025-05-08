@@ -23,13 +23,19 @@ spec:
   chart:
     spec:
       chart: traefik
-      version: "35.2.0"
+      version: "^35.2.0"
       sourceRef:
         kind: HelmRepository
         name: ingress-traefik
         namespace: flux-system
       interval: 12h
   values:
+    podSecurityContext:
+      seccompProfile:
+        type: RuntimeDefault
+    securityContext:
+      seccompProfile:
+        type: RuntimeDefault
     service:
       type: LoadBalancer
       spec:
@@ -45,13 +51,3 @@ spec:
       dashboard:
         enabled: true
         entryPoints: ["web"]
-    podSecurityContext:
-      seccompProfile:
-        type: RuntimeDefault
-    securityContext:
-      runAsNonRoot: true
-      seccompProfile:
-        type: RuntimeDefault
-      capabilities:
-        drop:
-          - ALL
