@@ -48,6 +48,11 @@ spec:
       podSecurityContext:
         seccompProfile:
           type: RuntimeDefault
-      containerSecurityContext:
+      securityContext:
+        runAsNonRoot: true
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
         seccompProfile:
           type: RuntimeDefault
