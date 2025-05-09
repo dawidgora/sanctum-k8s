@@ -47,14 +47,6 @@ spec:
         port: 443
         tls:
           enabled: true
-    ingressRoute:
-      dashboard:
-        enabled: true
-        entryPoints: ["websecure"]
-        insecure: false
-    additionalArguments:
-      - "--api.dashboard=true"
-      - "--entrypoints.websecure.http.tls=true"
     providers:
       kubernetesIngress:
         publishedService:
