@@ -1,0 +1,28 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: dashboard-auth
+  namespace: ingress-traefik
+spec:
+  basicAuth:
+    secret: traefik-dashboard-auth
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard
+  namespace: ingress-traefik
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`traefik.test.snctm.it`)
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
+      middlewares:
+        - name: dashboard-auth
+  tls:
+    secretName: traefik-dashboard-tls
