@@ -1,5 +1,5 @@
 talos/
 cloudflare-secret.yaml
 traefik-dashboard-auth-secret.yaml
-longhorn-dashborad-auth.yaml
+longhorn-dashboard-auth.yaml
 watch_*
