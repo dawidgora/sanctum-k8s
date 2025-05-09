@@ -36,3 +36,6 @@ spec:
   values:
     defaultSettings:
       defaultDataPath: /var/lib/longhorn
+    serviceAccount:
+      create: true
+      name: longhorn-service-account  
