@@ -50,5 +50,16 @@ spec:
     ingressRoute:
       dashboard:
         enabled: true
-        entryPoints: ["web"]
-        insecure: true
+        entryPoints: ["websecure"]
+        insecure: false
+    additionalArguments:
+      - "--api.dashboard=true"
+      - "--entrypoints.websecure.http.tls=true"
+    middlewares:
+      dashboard-auth:
+        basicAuth:
+          secret: traefik-dashboard-auth
+    providers:
+      kubernetesIngress:
+        publishedService:
+          enabled: true

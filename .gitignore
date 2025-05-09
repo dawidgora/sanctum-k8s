@@ -1,2 +1,3 @@
 talos/
 cloudflare-secret.yaml
+traefik-dashboard-auth-secret.yaml
