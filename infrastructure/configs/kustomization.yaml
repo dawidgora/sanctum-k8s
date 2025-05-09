@@ -4,3 +4,4 @@ resources:
   - cluster-issuers.yaml
   - metallb-config.yaml
   - traefik-config.yaml
+  - longhorn-ingress.yaml
