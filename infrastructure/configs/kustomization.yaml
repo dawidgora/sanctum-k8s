@@ -4,3 +4,4 @@ resources:
   - cluster-issuers.yaml
   - metallb-config.yaml
   - traefik-dashboard-ingress.yaml
+  - traefik-dashboard-middleware.yaml

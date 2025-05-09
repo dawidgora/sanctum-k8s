@@ -55,10 +55,6 @@ spec:
     additionalArguments:
       - "--api.dashboard=true"
       - "--entrypoints.websecure.http.tls=true"
-    middlewares:
-      dashboard-auth:
-        basicAuth:
-          secret: traefik-dashboard-auth
     providers:
       kubernetesIngress:
         publishedService:
