@@ -11,7 +11,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./clusters/test/secrets
+  path: ./secrets/test
   prune: true
   wait: true
 ---
