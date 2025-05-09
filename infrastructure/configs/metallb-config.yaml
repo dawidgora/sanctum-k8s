@@ -6,7 +6,6 @@ metadata:
   namespace: metallb-system
 spec:
   addresses:
-    - 10.42.110.100/32
     - 10.42.110.200-10.42.110.250
 ---
 apiVersion: metallb.io/v1beta1
