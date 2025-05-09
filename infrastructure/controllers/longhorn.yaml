@@ -39,3 +39,5 @@ spec:
     serviceAccount:
       create: true
       name: longhorn-service-account  
+    rbac:
+      create: true
