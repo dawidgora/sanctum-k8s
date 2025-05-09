@@ -39,3 +39,13 @@ spec:
       target:
         kind: ClusterIssuer
         name: letsencrypt
+    - target:
+        kind: Ingress
+        name: longhorn-dashboard
+      patch: |
+        - op: replace
+          path: /spec/rules/0/host
+          value: longhorn.test.snctm.it
+        - op: replace
+          path: /spec/tls/0/hosts/0
+          value: longhorn.test.snctm.it
