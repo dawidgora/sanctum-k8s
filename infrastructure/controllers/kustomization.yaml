@@ -5,3 +5,4 @@ resources:
   - ingress-traefik.yaml
   - metallb.yaml
   - longhorn.yaml
+  - 1password.yaml
